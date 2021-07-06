@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRT_SECURE_NO_WARNINGS 1//这句话一定是放在源文件的第一行
 
 #include<stdio.h>//实用库函数要提前说明，#是一种指令形式，#include<stdio.h>则指的是包含一个叫stdio.h的文件
                  //std指标准standard，i指的是input，o表示output
@@ -205,4 +205,26 @@
 
 
 
-//常量
+//常量,即不变的量
+//C语言中的常量分为以下几种：
+//1、字面常量，直接写出来的不可变的量，就是一个直接的值
+//2、const修饰的常变量，const指的是常属性，如：
+//int main()
+//{
+//    const int num = 2021;//此处num被const锁定为常量，所以此时num为const修饰的常变量
+//    printf("%d\n", num);
+//    return 0;
+//}
+//相反：
+//int main()
+//{
+//    int num = 2021;
+//    printf("%d\n", num);
+//    num = 2022;//此时num没被const锁定，可被改变
+//    printf("%d\n", num);
+//    return 0;
+//}
+//3、#define定义的标识符常量
+//4、枚举常量
+//
+
