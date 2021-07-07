@@ -205,13 +205,15 @@
 
 
 
+//常量
+
 //常量,即不变的量
 //C语言中的常量分为以下几种：
 //1、字面常量，直接写出来的不可变的量，就是一个直接的值
 //2、const修饰的常变量，const指的是常属性，如：
 //int main()
 //{
-//    const int num = 2021;//此处num被const锁定为常量，所以此时num为const修饰的常变量
+//    const int num = 2021;//此处num被const锁定为常量，所以此时num为const修饰的常变量,但注意：虽然num被const修饰后有了常属性，但num的本质还是变量！
 //    printf("%d\n", num);
 //    return 0;
 //}
@@ -224,7 +226,68 @@
 //    printf("%d\n", num);
 //    return 0;
 //}
-//3、#define定义的标识符常量
-//4、枚举常量
+//3、#define 定义的标识符常量，例如：
+//        计算圆面积代码：
+//#define PAI 3.14//此处#define 定义的标识符常量PAI即Π≈3.14
+//int main()
+//{
+//	double fRadius;
+//	double fResult=0;
 //
+//	printf("圆的半径为：\n");
+//	scanf("%lf", &fRadius);
+//
+//	fResult = fRadius * fRadius * PAI;
+//
+//	printf("圆的面积为：%lf\n", fResult);
+//	return 0;
+//}
+//4、枚举（就是一一列举的意思）常量，例如：
+//enum Season//enum是枚举关键字，则放在枚举类型里的值称为枚举常量，并且枚举常量是不能被改的
+//{
+//    Spring,
+//    Summer,
+//    Autumn,
+//    Winter
+//};//此处大括号}后面的;不能省略
+//int main()
+//{
+//    printf("%d\n", Spring);//0
+//    printf("%d\n", Summer);//1
+//    printf("%d\n", Autumn);//2
+//    printf("%d\n", Winter);//3
+//    return 0;
+//}
 
+
+
+//字符串+转义字符+注释
+// 
+// 字符串，是由""引起的内容
+// 
+//int main()
+//{
+//    char arr1[] = "ABC";//用char的数组（名字叫arr）用于储存字符串"ABC",此处字符串"ABC"放着'A'、'B'、'C'和一个隐藏'\0'（其实是字符串的结束标志）
+//    char arr2[] = { 'A','B','C',0 };//用英文半角单引号所引的是字符，此处0就是'\0',如果不加入这种转义字符，打印时ABC后面还会有一些不知道的随机字符
+//    printf("%s\n", arr1);//打印字符串用的是%s
+//    printf("%s\n", arr2);
+//    return 0;
+//}
+// 注：（ASCII编码，ASCII打印字符所对应的值称为ASCII码值，例子如下）
+// '\0'的值是0
+// a的值是97
+// A的值是65
+// ASCII——American Standard Code for Information Interchange 美国标准信息交换代码
+//int main()
+//{
+//    char arr1[] = "ABC";
+//    char arr2[] = { 'A','B','C',0 };
+//    printf("%d\n", strlen(arr1));//strlen 即string length，用来计算字符串长度，此处arr1计算出来的长度为3
+//    printf("%d\n", strlen(arr2));//arr2里面，若没有0或'\0'时计算出来的长度为15（事实上应该是随机值，长度不定，就是计算时直到遇见'\0'才会停止，则停止时的长度就为计算出来的长度）；如果存在0或'\0'时则计算出来的长度为3，与arr1计算出来的一样
+//    return 0;
+//}
+//
+// 转义字符
+// 
+// 
+//
