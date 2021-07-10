@@ -3,19 +3,18 @@
 #include<stdio.h>
 
 
-#define PAI 3.141593//PAI鍗澄犫増3.141593
-
-
+#define PAI 3.141593//PAI即Π≈3.141593
 int main()
 {
 	double fRadius;
-	double fResult = 0;
+	double fResult=0;
 
-	printf("鍦嗙殑鍗婂緞涓猴細\n");
+	printf("圆的半径为：\n");
 	scanf("%lf", &fRadius);
 
 	fResult = fRadius * fRadius * PAI;
 
-	printf("鍦嗙殑闈㈢Н涓猴細%lf\n", fResult);
+	printf("圆的面积为：%lf\n", fResult);
 	return 0;
 }
+
