@@ -1,0 +1,32 @@
+# Project: Tic-Tac-Tic Game
+# Makefile created by Dev-C++ 6.7.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = game.o test.o
+LINKOBJ  = game.o test.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -g3 -static
+INCS     = -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/program files (x86)/dev-cpp/mingw32/include" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+CXXINCS  = -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/mingw32" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/backward" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/program files (x86)/dev-cpp/mingw32/include" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+BIN      = "Tic-Tac-Tic Game.exe"
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "$(BIN)" $(LIBS)
+
+game.o: game.c game.h
+	$(CC) -c game.c -o game.o $(CFLAGS) 
+
+test.o: test.c game.h
+	$(CC) -c test.c -o test.o $(CFLAGS) 

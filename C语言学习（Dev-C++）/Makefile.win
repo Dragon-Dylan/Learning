@@ -1,0 +1,35 @@
+# Project: C语言学习
+# Makefile created by Dev-C++ 6.7.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = 源文件.o C语言通讯录管理系统.o C语言程序设计：图书管理系统.o
+LINKOBJ  = 源文件.o C语言通讯录管理系统.o C语言程序设计：图书管理系统.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -g3 -static
+INCS     = -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/program files (x86)/dev-cpp/mingw32/include" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+CXXINCS  = -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/mingw32" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/backward" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/program files (x86)/dev-cpp/mingw32/include" -I"d:/program files (x86)/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+BIN      = C语言学习.exe
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "$(BIN)" $(LIBS)
+
+源文件.o: 源文件.c
+	$(CC) -c 源文件.c -o 源文件.o $(CFLAGS) 
+
+C语言通讯录管理系统.o: C语言通讯录管理系统.c
+	$(CC) -c C语言通讯录管理系统.c -o C语言通讯录管理系统.o $(CFLAGS) 
+
+C语言程序设计：图书管理系统.o: C语言程序设计：图书管理系统.c
+	$(CC) -c C语言程序设计：图书管理系统.c -o C语言程序设计：图书管理系统.o $(CFLAGS) 
