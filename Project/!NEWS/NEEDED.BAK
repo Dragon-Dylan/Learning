@@ -1,3 +1,12 @@
+
+/*
+***********************************************
+*        Designed by Dylan，Simon，Su         *
+*  Translation comes from Baidu translation.  *
+*         Dylan，Simon，Su copyright.         *
+***********************************************
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include<stdio.h>
@@ -7,41 +16,26 @@
 #include<conio.h>
 #include<time.h>
 
-//main function
-int main(void);
-
 //Create a preload page
 void Preload(void);
-
 //Create a user menu
 void IndentityMenu(int *Ikey);
 
 //Define users' identities
-struct User{
-	char Name[20];
-	char Passwords[20];
-};//IDnumber have not been considered.
-struct UserType{
-	struct User Pass;
-	int Identity;
-};//IDnumber have not been considered.
 struct UserNode{
-	struct User Pass;
-	int Identity;
-	struct UserNode *next;
+    char name[20];
+    char passwords[20];
+    long phone;
+    int identity;
+    struct UserNode *next;
 };//IDnumber have not been considered.
-
-
-//Read&Save the information of the new user
-void SaveUser(void);
-void RSdUser(struct UserNode* head, struct UserNode* ipass);
-
-//Delect the information of the new user
-void DelectUser(void);
-
-//Cheak&Validate login
-void Login(struct UserType u);
-void CLogin(struct UserNode* head, struct UserNode* ipass, struct UserType u);
+typedef struct UserNode LNode, *pNode;
+//Create a visitor
+//struct UserNode u = {"Visitor", "000000", 0, 0, NULL};
+//Login function
+void Login(struct UserNode* u);
+//Registered user
+void RegisterUser(void);
 
 //Specify news format
 enum Type{other, Politics, Economics, Worlds, Sports};
@@ -56,6 +50,8 @@ struct NewsFrom{
 	char topic[100];
 	char content[100];
 	int type;
+	int author[20];
+	struct NewsFrom *next;
 };//Commments have not been considered.
 
 //Read the news from the file
@@ -65,6 +61,12 @@ struct NewsFrom NewsRead(void);
 struct NewsFrom NewsWrite(void);
 
 //Main interface establishment
-void Interface(struct UserType u);
+void Interface(void);
 
-
+/*
+***********************************************
+*        Designed by Dylan，Simon，Su         *
+*  Translation comes from Baidu translation.  *
+*         Dylan，Simon，Su copyright.         *
+***********************************************
+*/
